@@ -1,6 +1,6 @@
 {
   "name": "hapi-tutorial",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Hapi.js getting started tutorial.",
   "main": "server.js",
   "scripts": {

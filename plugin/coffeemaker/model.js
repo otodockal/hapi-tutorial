@@ -73,6 +73,10 @@ module.exports = function (plugin) {
 
   plugin.method('getRandomCoffeemakers', function (next) {
     next(null, shuffle(data));
+  },{
+    cache: {
+      expiresIn: 5000
+    }
   });
 
   plugin.method('getCoffeemakerById', function (id, next) {

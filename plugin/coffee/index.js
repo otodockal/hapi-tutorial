@@ -20,7 +20,8 @@ exports.register = function (plugin, options, next) {
         query: {
           page: Joi.number().min(1)
         }
-      }
+      },
+      cache: {expiresIn: 60 * 60 * 1000}
     }
   });
 

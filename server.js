@@ -1,7 +1,7 @@
 var Hapi = require('hapi');
 
 // Create a server with a host and port
-var server = Hapi.createServer('localhost', 8000);
+var server = module.exports = Hapi.createServer('localhost', 8000);
 
 // Homepage plugin
 server.pack.register(require('./plugin/homepage/index').register, function (err) {

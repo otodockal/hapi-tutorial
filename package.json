@@ -1,6 +1,6 @@
 {
   "name": "hapi-tutorial",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Hapi.js getting started tutorial.",
   "main": "server.js",
   "scripts": {
@@ -27,7 +27,8 @@
   },
   "devDependencies": {
     "gulp": "~3.6.0",
-    "gulp-nodemon": "~1.0.2"
+    "gulp-nodemon": "~1.0.2",
+    "lab": "~3.0.0"
   },
   "homepage": "https://github.com/otodockal/hapi-tutorial"
 }

@@ -1,4 +1,5 @@
 var Hapi = require('hapi');
+var Joi = require('joi');
 
 // Create a server with a host and port
 var server = Hapi.createServer('localhost', 8000);
@@ -26,6 +27,11 @@ server.route({
   config: {
     handler: function (request, reply) {
       reply('List of coffee.');
+    },
+    validate: {
+      query: {
+        page: Joi.number().min(1)
+      }
     }
   }
 });
@@ -36,6 +42,11 @@ server.route({
   config: {
     handler: function (request, reply) {
       reply('Coffee view - ' + request.params.id + '.');
+    },
+    validate: {
+      path: {
+        id: Joi.number().min(1)
+      }
     }
   }
 });
@@ -47,6 +58,11 @@ server.route({
   config: {
     handler: function (request, reply) {
       reply('List of coffee makers.');
+    },
+    validate: {
+      query: {
+        page: Joi.number().min(1)
+      }
     }
   }
 });
@@ -57,6 +73,11 @@ server.route({
   config: {
     handler: function (request, reply) {
       reply('Coffee maker view - ' + request.params.id + '.');
+    },
+    validate: {
+      path: {
+        id: Joi.number().min(1)
+      }
     }
   }
 });

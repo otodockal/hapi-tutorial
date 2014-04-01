@@ -1,0 +1,46 @@
+
+/*Shared*/
+body {
+  padding: 30px 0 30px 0;
+  text-align: center;
+}
+footer {
+  border-top: 1px solid #000;
+  padding-top: 30px;
+  margin-top: 30px;
+  font-style: italic;
+}
+ul {
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  width: 600px;
+}
+li {
+  padding: 10px;
+}
+li img {
+  max-width: 300px;
+}
+img {
+  border-radius: 50px;
+}
+a {
+  color: #000;
+}
+h1 a {
+  text-decoration: none;
+}
+#content {
+  min-height: 300px;
+}
+
+/*Homepage list*/
+#hp-content {
+  margin-top: 100px;
+}
+
+/*view*/
+.view-img {
+  max-width: 800px;
+}

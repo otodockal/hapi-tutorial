@@ -7,6 +7,17 @@ var model = require('./model');
 
 exports.register = function (plugin, options, next) {
 
+  // Templates
+  plugin.views({
+    engines: {
+      html: 'handlebars'
+    },
+    path: './templates',
+    partialsPath: './templates',
+    layout: true,
+    layoutPath: './../homepage/templates'
+  });
+
   // Coffee
   plugin.route({
     method: 'GET',
@@ -14,7 +25,11 @@ exports.register = function (plugin, options, next) {
     config: {
       handler: function (request, reply) {
 
-        reply(model.getCoffeeList());
+        reply.view('list', {
+          title: 'Coffee',
+          list: model.getCoffeeList(),
+          baseUrl: request.server.info.uri
+        });
       },
       validate: {
         query: {
@@ -38,7 +53,11 @@ exports.register = function (plugin, options, next) {
             return reply(Boom.notFound());
           }
 
-          reply(coffee);
+          reply.view('view', {
+            title: coffee ? coffee.type : '',
+            view: coffee,
+            baseUrl: request.server.info.uri
+          });
         });
       },
       validate: {

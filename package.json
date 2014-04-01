@@ -1,6 +1,6 @@
 {
   "name": "hapi-tutorial",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Hapi.js getting started tutorial.",
   "main": "server.js",
   "scripts": {
@@ -22,7 +22,8 @@
   "dependencies": {
     "hapi": "~3.1.0",
     "joi": "~2.9.0",
-    "boom": "~2.4.0"
+    "boom": "~2.4.0",
+    "handlebars": "~2.0.0-alpha.2"
   },
   "devDependencies": {
     "gulp": "~3.6.0",

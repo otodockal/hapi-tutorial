@@ -4,6 +4,16 @@ var Boom = require('boom');
 
 exports.register = function (plugin, options, next) {
 
+  // Templates
+  plugin.views({
+    engines: {
+      html: 'handlebars'
+    },
+    path: './templates',
+    partialsPath: './templates',
+    layout: true,
+    layoutPath: './../homepage/templates'
+  });
 
   // Setup plugin model
   require('./model')(plugin);
@@ -21,7 +31,11 @@ exports.register = function (plugin, options, next) {
             return reply(Boom.notFound());
           }
 
-          reply(coffeeMakers);
+          reply.view('list', {
+            title: 'Coffee makers',
+            list: coffeeMakers,
+            baseUrl: request.server.info.uri
+          });
         });
       },
       validate: {
@@ -45,7 +59,11 @@ exports.register = function (plugin, options, next) {
             return reply(Boom.notFound());
           }
 
-          reply(coffemaker);
+          reply.view('view', {
+            title: coffemaker ? coffemaker.type : '',
+            view: coffemaker,
+            baseUrl: request.server.info.uri
+          });
         });
       },
       validate: {

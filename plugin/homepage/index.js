@@ -1,6 +1,24 @@
 
-
 var plug = function (plugin, options, next) {
+
+  // Templates
+  plugin.views({
+    engines: {
+      html: 'handlebars'
+    },
+    path: './plugin/homepage/templates',
+    partialsPath: './plugin/homepage/templates',
+    layout: true
+  });
+
+  // Serve static CSS file
+  plugin.route({
+    method: 'GET',
+    path: '/css/style.css',
+    handler: {
+      file: './plugin/homepage/css/style.css'
+    }
+  });
 
   // Homepage route
   plugin.route({
@@ -8,12 +26,10 @@ var plug = function (plugin, options, next) {
     path: '/',
     config: {
       handler: function (request, reply) {
-        reply(
-          '<h1>Hapi\'s cafe</h1>' + 
-          '<h2>Drink coffee and be hapi!</h2>' + 
-          '<p><a href="/coffee">Coffee</a></p>' + 
-          '<p><a href="/coffeemakers">Coffee makers</a></p>' 
-        );
+        reply.view('list', {
+          title: 'Hapi\'s cafe',
+          baseUrl: request.server.info.uri
+        });
       }
     }
   });

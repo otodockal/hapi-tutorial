@@ -1,0 +1,13 @@
+
+<h2><a href="/coffeemakers">Coffee makers</a></h2>
+
+<ul>
+  {{#list}}
+  <li>
+    <a href="/coffeemakers/{{id}}">
+    <h4>{{type}}</h4>
+    {{#if pic_thumb}}<img src="{{pic_thumb}}" alt="{{type}}" />{{/if}}
+    </a>
+  </li>
+  {{/list}}
+</ul>

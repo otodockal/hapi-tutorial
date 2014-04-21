@@ -26,25 +26,29 @@ describe('Coffee model', function () {
 
   describe('getCoffeeById', function () {
 
+    // A
     it('should return coffee by Id', function (done) {
 
       model.getCoffeeById(1, function (err, coffee) {
 
-        // A
         expect(err).to.equal(null);
         expect(coffee.id).to.equal(1);
 
-        model.getCoffeeById(200, function (err, coffee) {
-
-          // B
-          // expect(typeof err).to.equal('object');
-          expect(coffee).to.equal(undefined);
-          done();
-        });
-
+        done();
       });
     });
 
+    it('should not return coffee by Id', function (done) {
+
+      // B
+      model.getCoffeeById(200, function (err, coffee) {
+
+        expect(err.toString()).to.equal('Error: Not found!');
+        expect(coffee).to.equal(undefined);
+        done();
+      });
+    });
 
   });
+
 });

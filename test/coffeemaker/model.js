@@ -11,7 +11,6 @@ var it = Lab.test;
 
 describe('Coffee maker model', function () {
 
-
   describe('getRandomCoffeemakers', function () {
 
     it('should return (random) list of coffee makers', function (done) {
@@ -26,22 +25,26 @@ describe('Coffee maker model', function () {
 
   describe('getCoffeemakerById', function () {
 
+    // A
     it('should return coffee maker by id', function (done) {
 
       server.methods.getCoffeemakerById(1, function (err, result) {
 
-        // A
         expect(err).to.equal(null);
         expect(result.id).to.equal(1);
 
-        server.methods.getCoffeemakerById(1000, function (err, result) {
+        done();
+      });
+    });
 
-          // B
-          // expect(typeof err).to.equal('object');
-          expect(result).to.equal(undefined);
-          done();
-        });
+    // B
+    it('should not return coffee maker by id', function (done) {
 
+      server.methods.getCoffeemakerById(1000, function (err, result) {
+
+        expect(err.toString()).to.equal('Error: Not found!');
+        expect(result).to.equal(undefined);
+        done();
       });
     });
   });

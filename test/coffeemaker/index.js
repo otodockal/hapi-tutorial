@@ -17,12 +17,9 @@ describe('Server', function () {
       // code
       expect(res.statusCode).to.equal(200);
       // headers
-      // expect(res.headers['content-type']).to.equal('application/json; charset=utf-8');
       expect(res.headers['content-type']).to.equal('text/html; charset=utf-8');
       expect(res.headers['content-length']).to.above(0);
       expect(res.headers['cache-control']).to.equal('no-cache');
-      // payload
-      // expect(res.result.length).to.equal(6);
 
       done();
     });
@@ -34,12 +31,9 @@ describe('Server', function () {
       // code
       expect(res.statusCode).to.equal(200);
       // headers
-      // expect(res.headers['content-type']).to.equal('application/json; charset=utf-8');
       expect(res.headers['content-type']).to.equal('text/html; charset=utf-8');
       expect(res.headers['content-length']).to.above(0);
       expect(res.headers['cache-control']).to.equal('no-cache');
-      // payload
-      // expect(res.result.id).to.equal(1);
 
       done();
     });

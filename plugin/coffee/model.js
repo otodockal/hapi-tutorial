@@ -305,10 +305,10 @@ module.exports = {
       }
     })[0];
 
-    if (!coffee) {
+    if (coffee) {
+      next(null, coffee);
+    } else {
       next(new Error('Not found!'));
     }
-
-    next(null, coffee);
   }
 }

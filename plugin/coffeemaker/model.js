@@ -83,11 +83,11 @@ module.exports = function (plugin) {
 
     var coffeemaker = getCoffeemakerById(id);
 
-    if (!coffeemaker) {
-      next(new Error('Not found'));
+    if (coffeemaker) {
+      next(null, coffeemaker);
+    } else {
+      next(new Error('Not found!'));
     }
-
-    next(null, coffeemaker);
   });
 
 }

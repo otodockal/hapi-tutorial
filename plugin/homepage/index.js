@@ -33,10 +33,10 @@ var plug = function (plugin, options, next) {
       }
     }
   });
-}
+};
 
 exports.register = {
   name: 'Homepage',
   version: '0.0.1',
   register: plug
-}
+};

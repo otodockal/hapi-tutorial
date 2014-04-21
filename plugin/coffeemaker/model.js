@@ -48,7 +48,7 @@ var data = [
     "pic_thumb": "http://www.filtrovanakava.cz/images/v60.png",
     "source": "http://www.filtrovanakava.cz/hario-v60/"
   }
-]
+];
 
 var shuffle = function (sourceArray) {
   for (var n = 0; n < sourceArray.length - 1; n++) {
@@ -59,7 +59,7 @@ var shuffle = function (sourceArray) {
     sourceArray[n] = temp;
   }
   return sourceArray;
-}
+};
 
 var getCoffeemakerById = function (id) {
   return data.filter(function (item) {
@@ -67,7 +67,7 @@ var getCoffeemakerById = function (id) {
       return item;
     }
   })[0];
-}
+};
 
 module.exports = function (plugin) {
 
@@ -90,4 +90,4 @@ module.exports = function (plugin) {
     }
   });
 
-}
+};

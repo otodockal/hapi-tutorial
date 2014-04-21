@@ -292,7 +292,7 @@ var data = [
     "id": 64,
     "type":"Yuanyang"
   }
-]
+];
 
 module.exports = {
   getCoffeeList: function () {
@@ -311,4 +311,4 @@ module.exports = {
       next(new Error('Not found!'));
     }
   }
-}
+};

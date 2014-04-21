@@ -1,24 +1,22 @@
 var gulp = require('gulp');
 var nodemon = require('gulp-nodemon');
+var jshint = require('gulp-jshint');
+var lab = require('gulp-lab');
 
-var exec = require('child_process').exec;
-var child;
+gulp.task('lint', function () {
+  gulp.src(['./plugin/**/*.js', './test/**/*.js'])
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
 
 // Run tests
 gulp.task('test', function () {
-
-  child = exec('node node_modules/lab/bin/lab',
-    function (error, stdout, stderr) {
-      console.log(stdout);
-      if (error) {
-        console.log('exec error: ' + error);
-      }
-  });
+  gulp.src('./test/**/*.js')
+    .pipe(lab());
 });
 
 // Restart the server for changes.
 gulp.task('default', function () {
-
-  nodemon({ script: 'server.js', ext: 'html js css' });
-
+  nodemon({ script: 'server.js', ext: 'html js css' })
+    .on('start', ['test', 'lint']);
 });

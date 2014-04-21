@@ -28,7 +28,9 @@
   "devDependencies": {
     "gulp": "~3.6.1",
     "gulp-nodemon": "~1.0.2",
+    "gulp-jshint": "~1.5.3",
     "lab": "~3.0.1",
+    "gulp-lab": "0.0.1"
   },
   "homepage": "https://github.com/otodockal/hapi-tutorial"
 }

@@ -25,6 +25,8 @@ server.pack.require('./plugin/coffeemaker', function (err) {
 });
 
 // Start the server
-server.start(function () {
-  console.log('Server started at port ' + server.info.port);
-});
+if (!module.parent) {
+  server.start(function () {
+    console.log('Server started at port ' + server.info.port);
+  });
+}

@@ -20,17 +20,17 @@
     "url": "https://github.com/otodockal/hapi-tutorial/issues"
   },
   "dependencies": {
-    "hapi": "~4.0.0",
+    "hapi": "~4.1.1",
     "joi": "~3.1.0",
     "boom": "~2.4.1",
     "handlebars": "~2.0.0-alpha.2"
   },
   "devDependencies": {
-    "gulp": "~3.6.1",
+    "gulp": "~3.6.2",
     "gulp-nodemon": "~1.0.2",
-    "gulp-jshint": "~1.5.3",
-    "lab": "~3.0.1",
-    "gulp-lab": "0.0.1"
+    "gulp-jshint": "~1.5.5",
+    "gulp-lab": "0.0.6",
+    "lab": "~3.1.1"
   },
   "homepage": "https://github.com/otodockal/hapi-tutorial"
 }
